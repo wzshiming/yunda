@@ -17,10 +17,10 @@ type RequestBody struct {
 }
 
 // NewRequestBody 创建新的请求
-func NewRequestBody(partnerID, password string, data []byte) *RequestBody {
+func NewRequestBody(partnerID, password string, request Request, data []byte) *RequestBody {
 	r := &RequestBody{
 		PartnerID: partnerID,
-		Request:   RequestData,
+		Request:   request,
 		Version:   "1.0",
 		XMLdata:   base64.StdEncoding.EncodeToString(data),
 	}

@@ -10,7 +10,7 @@ import (
 func (c *Client) Count() (r *CountResponse, err error) {
 	const url = `interface_txm_remain_num.php`
 
-	d := NewRequestBody(c.PartnerID, c.Password, nil)
+	d := NewRequestBody(c.PartnerID, c.Password, RequestData, nil)
 
 	resp, err := c.cli.Clone().
 		SetURLByStr(url).

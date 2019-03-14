@@ -18,7 +18,7 @@ func (c *Client) Delete(order *DeleteOrder) (err error) {
 	if err != nil {
 		return err
 	}
-	d := NewRequestBody(c.PartnerID, c.Password, data)
+	d := NewRequestBody(c.PartnerID, c.Password, RequestCancelOrder, data)
 
 	resp, err := c.cli.Clone().
 		SetURLByStr(url).

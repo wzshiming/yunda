@@ -19,7 +19,7 @@ func (c *Client) Update(order *CreateOrder) (r *CreateResponse, err error) {
 	if err != nil {
 		return nil, err
 	}
-	d := NewRequestBody(c.PartnerID, c.Password, data)
+	d := NewRequestBody(c.PartnerID, c.Password, RequestData, data)
 
 	resp, err := c.cli.Clone().
 		SetURLByStr(url).
