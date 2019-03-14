@@ -68,10 +68,10 @@ type CreateOrder struct {
 	CusArea1 string `xml:"cus_area1,omitempty"`
 
 	// 可以自定义显示信息 2，打印在客户自 定义区域 2，换行请用\n
-	CusArea2 string `xml:"cus_area1,omitempty"`
+	CusArea2 string `xml:"cus_area2,omitempty"`
 
 	// 可以自定义显示信息 3，打印在客户自 定义区域 3，换行请用\n
-	CusArea3 string `xml:"cus_area1,omitempty"`
+	CusArea3 string `xml:"cus_area3,omitempty"`
 
 	// 商品种类
 	Items CreateItems `xml:"items"`
