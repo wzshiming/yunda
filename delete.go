@@ -44,32 +44,32 @@ func (c *Client) Delete(order *DeleteOrder) (err error) {
 
 type DeleteOrder struct {
 	// 订单唯一序列号(可以是订单号，可 以是序列号，必须保证唯一)
-	OrderSerialNo string `xml:"order_serial_no"`
+	OrderSerialNo string `xml:"order_serial_no" json:"order_serial_no" bson:"order_serial_no"`
 
 	// 运单号，可选填
-	Mailno string `xml:"mailno,omitempty"`
+	Mailno string `xml:"mailno,omitempty" json:"mailno,omitempty" bson:"mailno,omitempty"`
 }
 
 type DeleteOrders struct {
-	XMLName xml.Name    `xml:"orders"`
-	Order   DeleteOrder `xml:"order"`
+	XMLName xml.Name    `xml:"orders" json:"orders" bson:"orders"`
+	Order   DeleteOrder `xml:"order" json:"order" bson:"order"`
 }
 
 type DeleteResponsesBody struct {
-	XMLName  xml.Name           `xml:"responses"`
-	Response DeleteResponseBody `xml:"response"`
+	XMLName  xml.Name           `xml:"responses" json:"responses" bson:"responses"`
+	Response DeleteResponseBody `xml:"response" json:"response" bson:"response"`
 }
 
 type DeleteResponseBody struct {
-	Status         string `xml:"status"`
-	Msg            string `xml:"msg"`
-	DeleteResponse `xml:"innerxml"`
+	Status         string `xml:"status" json:"status" bson:"status"`
+	Msg            string `xml:"msg" json:"msg" bson:"msg"`
+	DeleteResponse `xml:"innerxml" json:"innerxml" bson:"innerxml"`
 }
 
 type DeleteResponse struct {
 	// 订单唯一序列号(可以是订单号，可 以是序列号，必须保证唯一)
-	OrderSerialNo string `xml:"order_serial_no"`
+	OrderSerialNo string `xml:"order_serial_no" json:"order_serial_no" bson:"order_serial_no"`
 
 	// 运单号，可选填
-	Mailno string `xml:"mailno"`
+	Mailno string `xml:"mailno" json:"mailno" bson:"mailno"`
 }

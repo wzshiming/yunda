@@ -35,18 +35,18 @@ func (c *Client) Count() (r *CountResponse, err error) {
 }
 
 type CountResponse struct {
-	TotalNum  string `xml:"total_num"`
-	UsedNum   string `xml:"used_num"`
-	RemainNum string `xml:"remain_num"`
+	TotalNum  string `xml:"total_num" json:"total_num" bson:"total_num"`
+	UsedNum   string `xml:"used_num" json:"used_num" bson:"used_num"`
+	RemainNum string `xml:"remain_num" json:"remain_num" bson:"remain_num"`
 }
 
 type CountResponsesBody struct {
-	XMLName  xml.Name          `xml:"responses"`
-	Response CountResponseBody `xml:"response"`
+	XMLName  xml.Name          `xml:"responses" json:"responses" bson:"responses"`
+	Response CountResponseBody `xml:"response" json:"response" bson:"response"`
 }
 
 type CountResponseBody struct {
-	Status        string `xml:"status"`
-	Msg           string `xml:"msg"`
-	CountResponse `xml:"innerxml"`
+	Status        string `xml:"status" json:"status" bson:"status"`
+	Msg           string `xml:"msg" json:"msg" bson:"msg"`
+	CountResponse `xml:"innerxml" json:"innerxml" bson:"innerxml"`
 }
