@@ -4,6 +4,10 @@ import (
 	"github.com/wzshiming/requests"
 )
 
+const (
+	TestHost = `http://orderdev.yundasys.com:10110/cus_order/order_interface/`
+)
+
 // Client 韵达客户端
 type Client struct {
 	PartnerID string
