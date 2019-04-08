@@ -6,6 +6,7 @@ import (
 
 const (
 	TestHost = `http://orderdev.yundasys.com:10110/cus_order/order_interface/`
+	Host     = `http://order.yundasys.com:10235/cus_order/order_interface/`
 )
 
 // Client 韵达客户端
